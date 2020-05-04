@@ -1,0 +1,12 @@
+{% extends "tutorial/layout.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Microsoft Graph API Auth</h1>
+  <p class="lead">This sample app shows how to use the Microsoft Graph API to access a user's data from Django Python</p>
+  {% if user.is_authenticated %}
+    <h4>Welcome {{ user.name }}!</h4>
+  {% else %}
+    <a href="{% url 'signin' %}" class="btn btn-primary btn-large">Click here to sign in</a>
+  {% endif %}
+</div>
+{% endblock %}
